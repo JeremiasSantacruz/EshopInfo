@@ -14,7 +14,7 @@
 
 # AWS User-specific
 .idea/**/aws.xml
-
+.idea/**
 # Generated files
 .idea/**/contentModel.xml
 
@@ -108,7 +108,7 @@ fabric.properties
 .idea/codestream.xml
 
 ### Java ###
-# Compiled class file
+# Compiled clas file
 *.class
 
 # Log file
