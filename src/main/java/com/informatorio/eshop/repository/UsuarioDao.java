@@ -1,9 +1,9 @@
 package com.informatorio.eshop.repository;
 
-import org.springframework.data.repository.Repository;
+import org.springframework.data.repository.CrudRepository;
 
 import com.informatorio.eshop.models.Usuario;
 
-public interface UsuarioDao extends Repository<Usuario, Long> {
+public interface UsuarioDao extends CrudRepository<Usuario, Long> {
 
 }

@@ -1,5 +1,6 @@
 package com.informatorio.eshop.controllers;
 
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PatchMapping;
@@ -14,7 +15,7 @@ import com.informatorio.eshop.models.dtos.UsuarioDto;
 public interface UsuarioController {
 
    @PutMapping("/")
-   void create(@RequestBody UsuarioDto usuarioDto);
+   void create(@RequestBody @Validated UsuarioDto usuarioDto);
 
    @GetMapping("/{id}")
    UsuarioDto read(@PathVariable Long id);
