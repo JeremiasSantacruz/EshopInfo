@@ -1,13 +1,14 @@
-Se desea crear una API para un E-Commerce (el rubro es a elección. Indumentaria, Juguetes, etc). En esta primera entrega de la API se desea almacenar las entidades:
+## Escenario
+Se desea crear una API para un E-Commerce (el rubro es a elección. Indumentaria, Juguetes, etc). En esta primera entrega de la API se desea 
+almacenar las entidades:
 
 
- ###Usuario
-* **Atributos:** Nombre, Apellido, Dirección, Fecha de Alta (creación)
-Producto:
-* **Atributos:**  Nombre, Descripción, precio unitario, código de inventario (no es el id, pero es único) y categoría (depende del rubro que elijan).
-Carrito:
-* **Atributos:** Fecha de creación, usuario (dueño del carrito) y productos relacionados. Además de estado (en curso o cerrado. Solo puede haber 1 
-carrito en curso por usuario)
+ * ####Usuario
+    * **Atributos:** Nombre, Apellido, Dirección, Fecha de Alta (creación)
+ * ####Producto:
+    * **Atributos:**  Nombre, Descripción, precio unitario, código de inventario (no es el id, pero es único) y categoría (depende del rubro que elijan).
+ * ####Carrito:
+    * **Atributos:** Fecha de creación, usuario (dueño del carrito) y productos relacionados. Además de estado (en curso o cerrado. Solo puede haber 1 carrito en curso por usuario)
 
 **Observación:** Recuerden que se debe normalizar la línea/detalle de carrito.
 

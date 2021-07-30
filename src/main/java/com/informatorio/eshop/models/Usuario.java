@@ -11,7 +11,10 @@ import javax.validation.constraints.NotNull;
 
 import org.hibernate.annotations.CreationTimestamp;
 
+import lombok.Data;
+
 @Entity
+@Data
 public class Usuario {
 
    @Id
@@ -26,7 +29,7 @@ public class Usuario {
    private String apellido;
 
    @NotNull
-   private String dirección;
+   private String direccion;
 
    @CreationTimestamp
    private LocalDate fechaDeAlta;
