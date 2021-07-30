@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: com.informatorio.eshop.EshopApplicationTests
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 5.339 s - in com.informatorio.eshop.EshopApplicationTests
