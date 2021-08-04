@@ -18,6 +18,7 @@ import com.informatorio.eshop.usuario.services.ServicesUsuarios;
 public class UsuarioControllerImp implements UsuarioController {
 
    private ServicesUsuarios servicesUsuarios;
+   private static final String MSG_NULL_ID = "El usuario no puede ser nulo.";
 
    @Autowired
    public UsuarioControllerImp(ServicesUsuarios servicesUsuarios) {
@@ -27,7 +28,7 @@ public class UsuarioControllerImp implements UsuarioController {
    @Override
    public ResponseEntity<UsuarioDto> create(UsuarioDto usuarioDto) {
       if (usuarioDto == null) {
-         throw new IllegalArgumentException("El usuario no puede ser nulo.");
+         throw new IllegalArgumentException(MSG_NULL_ID );
       }
       servicesUsuarios.create(usuarioDto);
       return new ResponseEntity<UsuarioDto>(usuarioDto,HttpStatus.CREATED);
@@ -36,7 +37,7 @@ public class UsuarioControllerImp implements UsuarioController {
    @Override
    public UsuarioDto read(Long id) {
       if (id == null) {
-         throw new IllegalArgumentException("El usuario no puede ser nulo.");
+         throw new IllegalArgumentException(MSG_NULL_ID );
       }
       return servicesUsuarios.read(id);
    }
@@ -48,14 +49,17 @@ public class UsuarioControllerImp implements UsuarioController {
 
    @Override
    public UsuarioDto update(Long id, UsuarioDto usuarioDto) {
-      if (id != null){
-         return servicesUsuarios.update(id, usuarioDto);
+      if (id == null){
+         throw new IllegalArgumentException(MSG_NULL_ID );
       }
-      return null;
+      return servicesUsuarios.update(id, usuarioDto);
    }
 
    @Override
    public void delete(Long id) {
+      if (id == null)
+         throw new IllegalArgumentException(MSG_NULL_ID);
+      servicesUsuarios.delete(id);
    }
 
    @ExceptionHandler(ConstraintViolationException.class)
