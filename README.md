@@ -3,11 +3,11 @@ Se desea crear una API para un E-Commerce (el rubro es a elección. Indumentaria
 almacenar las entidades:
 
 
- * ####Usuario
+ * #### Usuario
     * **Atributos:** Nombre, Apellido, Dirección, Fecha de Alta (creación)
- * ####Producto:
+ * #### Producto:
     * **Atributos:**  Nombre, Descripción, precio unitario, código de inventario (no es el id, pero es único) y categoría (depende del rubro que elijan).
- * ####Carrito:
+ * #### Carrito:
     * **Atributos:** Fecha de creación, usuario (dueño del carrito) y productos relacionados. Además de estado (en curso o cerrado. Solo puede haber 1 carrito en curso por usuario)
 
 **Observación:** Recuerden que se debe normalizar la línea/detalle de carrito.
