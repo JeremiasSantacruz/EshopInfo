@@ -7,16 +7,15 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 
 import org.hibernate.annotations.CreationTimestamp;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.Data;
 
 @Entity
-@Setter
-@Getter
+@Data
 public class Usuario {
 
    @Id
@@ -25,12 +24,15 @@ public class Usuario {
    private Long id;
 
    @NotNull
+   @NotEmpty
    private String nombre;
 
    @NotNull
+   @NotEmpty
    private String apellido;
 
    @NotNull
+   @NotEmpty
    private String direccion;
 
    @CreationTimestamp

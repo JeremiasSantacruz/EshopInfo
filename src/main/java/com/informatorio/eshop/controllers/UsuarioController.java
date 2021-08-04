@@ -1,5 +1,8 @@
 package com.informatorio.eshop.controllers;
 
+import java.util.List;
+
+import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,10 +18,13 @@ import com.informatorio.eshop.models.dtos.UsuarioDto;
 public interface UsuarioController {
 
    @PutMapping("/")
-   void create(@RequestBody @Validated UsuarioDto usuarioDto);
+   ResponseEntity<UsuarioDto> create(@RequestBody @Validated UsuarioDto usuarioDto);
 
    @GetMapping("/{id}")
    UsuarioDto read(@PathVariable Long id);
+
+   @GetMapping("/")
+   List<UsuarioDto> getAll();
 
    @PatchMapping("/{id}")
    UsuarioDto update(@PathVariable Long id, @RequestBody UsuarioDto usuarioDto);

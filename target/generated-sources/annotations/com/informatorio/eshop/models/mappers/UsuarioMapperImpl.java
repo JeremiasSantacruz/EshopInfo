@@ -2,12 +2,14 @@ package com.informatorio.eshop.models.mappers;
 
 import com.informatorio.eshop.models.Usuario;
 import com.informatorio.eshop.models.dtos.UsuarioDto;
+import java.util.ArrayList;
+import java.util.List;
 import javax.annotation.processing.Generated;
 import org.springframework.stereotype.Component;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2021-08-04T10:38:51-0300",
+    date = "2021-08-04T19:09:05-0300",
     comments = "version: 1.4.2.Final, compiler: javac, environment: Java 16.0.1 (Oracle Corporation)"
 )
 @Component
@@ -45,5 +47,19 @@ public class UsuarioMapperImpl implements UsuarioMapper {
         usuario.setFechaDeAlta( usuarioDto.getFechaDeAlta() );
 
         return usuario;
+    }
+
+    @Override
+    public List<UsuarioDto> toDtoList(List<Usuario> usuarios) {
+        if ( usuarios == null ) {
+            return null;
+        }
+
+        List<UsuarioDto> list = new ArrayList<UsuarioDto>( usuarios.size() );
+        for ( Usuario usuario : usuarios ) {
+            list.add( toDto( usuario ) );
+        }
+
+        return list;
     }
 }

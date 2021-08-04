@@ -1,11 +1,12 @@
 package com.informatorio.eshop.services.imp;
 
-
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.informatorio.eshop.exceptions.UsuarioNotFoundException;
 import com.informatorio.eshop.models.Usuario;
 import com.informatorio.eshop.models.dtos.UsuarioDto;
 import com.informatorio.eshop.models.mappers.UsuarioMapper;
@@ -26,31 +27,50 @@ public class ServiceUsuario implements ServicesUsuarios {
    }
 
    @Override
-   public void create(UsuarioDto usuarioDto) {
+   public UsuarioDto create(UsuarioDto usuarioDto) {
       Usuario usuario = usuarioMapper.toEntity(usuarioDto);
-      usuarioDao.save(usuario);//TODO agregar Respuesta bonita
+      usuarioDao.save(usuario);
+      return usuarioDto;
    }
 
    @Override
    public UsuarioDto read(Long id) {
       Optional<Usuario> usuario = usuarioDao.findById(id);
-      return usuario.map(usuarioMapper::toDto).orElse(null);//TODO agregar Respuesta bonita
+      if (!usuario.isPresent()) {
+         throw new UsuarioNotFoundException();
+      }
+      return usuario.map(usuarioMapper::toDto).orElse(null);
+   }
+
+   @Override
+   public List<UsuarioDto> getAll() {
+      List<Usuario> usuarioList = usuarioDao.findAll();
+      if (usuarioList.isEmpty()) {
+         throw new UsuarioNotFoundException();
+      } else {
+         return usuarioMapper.toDtoList(usuarioList);
+      }
    }
 
    @Override
    public UsuarioDto update(Long id, UsuarioDto usuarioDto) {
       Optional<Usuario> usuario = usuarioDao.findById(id);
-      if (usuario.isPresent()){
+      if (usuario.isPresent()) {
          usuario.get().setDireccion(usuarioDto.getDireccion());
          usuarioDao.save(usuario.get());
-      } //TODO agregar Respuesta bonita
+      } else {
+         throw new UsuarioNotFoundException();
+      }
       return usuarioMapper.toDto(usuario.get());
    }
 
    @Override
    public void delete(Long id) {
       Optional<Usuario> usuario = usuarioDao.findById(id);
-      usuario.ifPresent(usuarioDao::delete);
-      //TODO agregar Respuesta bonita
+      if (usuario.isPresent()) {
+         usuarioDao.deleteById(usuario.get().getId());
+      } else {
+         throw new UsuarioNotFoundException();
+      }
    }
 }

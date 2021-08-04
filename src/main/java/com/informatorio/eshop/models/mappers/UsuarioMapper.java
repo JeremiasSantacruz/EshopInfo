@@ -1,5 +1,7 @@
 package com.informatorio.eshop.models.mappers;
 
+import java.util.List;
+
 import org.mapstruct.InjectionStrategy;
 import org.mapstruct.Mapper;
 
@@ -12,5 +14,7 @@ public interface UsuarioMapper {
    UsuarioDto toDto(Usuario usuario);
 
    Usuario toEntity(UsuarioDto usuarioDto);
+
+   List<UsuarioDto> toDtoList(List<Usuario> usuarios );
 
 }
