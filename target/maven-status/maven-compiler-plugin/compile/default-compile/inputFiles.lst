@@ -1,4 +1,5 @@
 /home/jere/IdeaProjects/EshopInfo/src/main/java/com/informatorio/eshop/repository/UsuarioDao.java
+/home/jere/IdeaProjects/EshopInfo/src/main/java/com/informatorio/eshop/controllers/exceptions/ExceptionHandler.java
 /home/jere/IdeaProjects/EshopInfo/src/main/java/com/informatorio/eshop/services/imp/ServiceUsuario.java
 /home/jere/IdeaProjects/EshopInfo/src/main/java/com/informatorio/eshop/models/Usuario.java
 /home/jere/IdeaProjects/EshopInfo/src/main/java/com/informatorio/eshop/models/dtos/UsuarioDto.java

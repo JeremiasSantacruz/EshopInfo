@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.informatorio.eshop.models.dtos.UsuarioDto;
 
-@RequestMapping("/default")
+@RequestMapping("/usuario")
 public interface UsuarioController {
 
    @PutMapping("/")

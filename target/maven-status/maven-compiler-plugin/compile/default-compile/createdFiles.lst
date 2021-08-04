@@ -1,6 +1,7 @@
+com/informatorio/eshop/controllers/exceptions/ExceptionHandler.class
 com/informatorio/eshop/EshopApplication.class
-com/informatorio/eshop/models/mappers/UsuarioMapperImpl.class
 com/informatorio/eshop/controllers/UsuarioController.class
+com/informatorio/eshop/models/mappers/UsuarioMapperImpl.class
 com/informatorio/eshop/services/imp/ServiceUsuario.class
 com/informatorio/eshop/services/ServicesUsuarios.class
 com/informatorio/eshop/controllers/imp/UsuarioControllerImp.class
