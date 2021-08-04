@@ -150,4 +150,6 @@ mm.log
 apex-scripts/*
 !apex-scripts/*.cls
 
+target/*
+
 # End of https://www.toptal.com/developers/gitignore/api/intellij,mavensmate,java
