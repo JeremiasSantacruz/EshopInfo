@@ -1,4 +1,4 @@
-package com.informatorio.eshop.controllers.imp;
+package com.informatorio.eshop.usuario.controllers.imp;
 
 import java.util.List;
 
@@ -10,9 +10,9 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.informatorio.eshop.controllers.UsuarioController;
-import com.informatorio.eshop.models.dtos.UsuarioDto;
-import com.informatorio.eshop.services.ServicesUsuarios;
+import com.informatorio.eshop.usuario.controllers.UsuarioController;
+import com.informatorio.eshop.usuario.models.dtos.UsuarioDto;
+import com.informatorio.eshop.usuario.services.ServicesUsuarios;
 
 @RestController
 public class UsuarioControllerImp implements UsuarioController {

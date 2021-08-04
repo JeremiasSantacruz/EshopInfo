@@ -1,4 +1,4 @@
-package com.informatorio.eshop.services.imp;
+package com.informatorio.eshop.usuario.services.imp;
 
 import java.util.List;
 import java.util.Optional;
@@ -6,12 +6,12 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.informatorio.eshop.exceptions.UsuarioNotFoundException;
-import com.informatorio.eshop.models.Usuario;
-import com.informatorio.eshop.models.dtos.UsuarioDto;
-import com.informatorio.eshop.models.mappers.UsuarioMapper;
-import com.informatorio.eshop.repository.UsuarioDao;
-import com.informatorio.eshop.services.ServicesUsuarios;
+import com.informatorio.eshop.usuario.exceptions.UsuarioNotFoundException;
+import com.informatorio.eshop.usuario.models.Usuario;
+import com.informatorio.eshop.usuario.models.dtos.UsuarioDto;
+import com.informatorio.eshop.usuario.models.mappers.UsuarioMapper;
+import com.informatorio.eshop.usuario.repository.UsuarioDao;
+import com.informatorio.eshop.usuario.services.ServicesUsuarios;
 
 @Service
 public class ServiceUsuario implements ServicesUsuarios {

@@ -1,4 +1,4 @@
-package com.informatorio.eshop.models.dtos;
+package com.informatorio.eshop.usuario.models.dtos;
 
 import java.time.LocalDate;
 

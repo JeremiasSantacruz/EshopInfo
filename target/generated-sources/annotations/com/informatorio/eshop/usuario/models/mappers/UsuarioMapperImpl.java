@@ -1,7 +1,7 @@
-package com.informatorio.eshop.models.mappers;
+package com.informatorio.eshop.usuario.models.mappers;
 
-import com.informatorio.eshop.models.Usuario;
-import com.informatorio.eshop.models.dtos.UsuarioDto;
+import com.informatorio.eshop.usuario.models.Usuario;
+import com.informatorio.eshop.usuario.models.dtos.UsuarioDto;
 import java.util.ArrayList;
 import java.util.List;
 import javax.annotation.processing.Generated;

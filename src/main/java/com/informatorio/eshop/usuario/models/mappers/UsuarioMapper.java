@@ -1,12 +1,12 @@
-package com.informatorio.eshop.models.mappers;
+package com.informatorio.eshop.usuario.models.mappers;
 
 import java.util.List;
 
 import org.mapstruct.InjectionStrategy;
 import org.mapstruct.Mapper;
 
-import com.informatorio.eshop.models.Usuario;
-import com.informatorio.eshop.models.dtos.UsuarioDto;
+import com.informatorio.eshop.usuario.models.Usuario;
+import com.informatorio.eshop.usuario.models.dtos.UsuarioDto;
 
 @Mapper(componentModel = "spring", injectionStrategy = InjectionStrategy.CONSTRUCTOR)
 public interface UsuarioMapper {

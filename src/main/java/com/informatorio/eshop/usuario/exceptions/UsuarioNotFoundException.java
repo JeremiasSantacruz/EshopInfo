@@ -1,4 +1,4 @@
-package com.informatorio.eshop.exceptions;
+package com.informatorio.eshop.usuario.exceptions;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;

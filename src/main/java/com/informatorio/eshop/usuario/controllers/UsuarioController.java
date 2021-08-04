@@ -1,4 +1,4 @@
-package com.informatorio.eshop.controllers;
+package com.informatorio.eshop.usuario.controllers;
 
 import java.util.List;
 
@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.informatorio.eshop.models.dtos.UsuarioDto;
+import com.informatorio.eshop.usuario.models.dtos.UsuarioDto;
 
 @RequestMapping("/usuario")
 public interface UsuarioController {

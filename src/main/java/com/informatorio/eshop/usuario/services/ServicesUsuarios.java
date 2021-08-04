@@ -1,8 +1,8 @@
-package com.informatorio.eshop.services;
+package com.informatorio.eshop.usuario.services;
 
 import java.util.List;
 
-import com.informatorio.eshop.models.dtos.UsuarioDto;
+import com.informatorio.eshop.usuario.models.dtos.UsuarioDto;
 
 public interface ServicesUsuarios {
 
