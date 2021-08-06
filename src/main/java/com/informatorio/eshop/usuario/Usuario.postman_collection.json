@@ -1,0 +1,364 @@
+{
+	"info": {
+		"_postman_id": "50f7af9e-2fc5-4f89-bf06-d9e9e833501c",
+		"name": "Usuario",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "NotFound",
+			"item": [
+				{
+					"name": "Obtener usuario no existente",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 404\", function () {",
+									"    pm.response.to.have.status(404);",
+									"});",
+									"",
+									"",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "text"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/usuario/2",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"usuario",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "BadRequest",
+			"item": [
+				{
+					"name": "Nuevo usuario Error",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 400\", function () {",
+									"    pm.response.to.have.status(400);",
+									"});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": \"\",\n    \"nombre\": \"\",\n    \"apellido\": \"Santa\",\n    \"direccion\": \"Ayacucho 428 3C\",\n    \"fechaDeAlta\": \"\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/usuario/",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"usuario",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Nuevo usuario",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 201\", function () {",
+							"    pm.response.to.have.status(201);",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": \"\",\n    \"nombre\": \"Carlos\",\n    \"apellido\": \"Santa\",\n    \"direccion\": \"Ayacucho 428 3C\",\n    \"fechaDeAlta\": \"\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/usuario/",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"usuario",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener usuario",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"Body have a id equals 1\", function () {",
+							"    const responseJson = pm.response.json();",
+							"    pm.expect(responseJson.id).to.eql(1);",
+							"});",
+							"pm.test(\"Body matches string\", function () {",
+							"    const responseJson = pm.response.json();",
+							"    const today = pm.collectionVariables.get(\"today\");",
+							"    pm.expect(responseJson.nombre).to.eql(\"Carlos\");",
+							"    pm.expect(responseJson.apellido).to.eql(\"Santa\");",
+							"    pm.expect(responseJson.fechaDeAlta).to.eql(today);",
+							"    pm.expect(responseJson.direccion).to.eql(\"Ayacucho 428 3C\");",
+							"});",
+							"",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/usuario/1",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"usuario",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener Lista Usuario",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"Body have a id equals 1\", function () {",
+							"    const responseJson = pm.response.json();",
+							"    pm.expect(responseJson.id).to.eql(1);",
+							"});",
+							"pm.test(\"Body matches string\", function () {",
+							"    const responseJson = pm.response.json();",
+							"    const today = pm.collectionVariables.get(\"today\");",
+							"    pm.expect(responseJson.nombre).to.eql(\"Carlos\");",
+							"    pm.expect(responseJson.apellido).to.eql(\"Santa\");",
+							"    pm.expect(responseJson.fechaDeAlta).to.eql(today);",
+							"    pm.expect(responseJson.direccion).to.eql(\"Ayacucho 428 3C\");",
+							"});",
+							"",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/usuario/1",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"usuario",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Actualizar usuario",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Body matches string\", function () {",
+							"    const responseJson = pm.response.json();",
+							"    pm.expect(responseJson.direccion).to.eql(\"Ayacucho 428 4C\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": 1,\n    \"nombre\": \"Carlos\",\n    \"apellido\": \"Santa\",\n    \"direccion\": \"Ayacucho 428 4C\",\n    \"fechaDeAlta\": \"2021-08-04\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/usuario/1",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"usuario",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Eliminar usuario",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{URL}}/usuario/1",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"usuario",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					"const moment = require('moment');",
+					"pm.collectionVariables.set(\"today\", moment().format(\"YYYY-MM-DD\"));"
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "URL",
+			"value": "localhost:8080/"
+		},
+		{
+			"key": "today",
+			"value": ""
+		}
+	]
+}

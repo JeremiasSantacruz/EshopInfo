@@ -1,0 +1,12 @@
+-------------------------------------------------------------------------------
+Test set: com.informatorio.eshop.usuario.controllers.imp.UsuarioControllerImpTest
+-------------------------------------------------------------------------------
+Tests run: 2, Failures: 1, Errors: 1, Skipped: 0, Time elapsed: 0.087 s <<< FAILURE! - in com.informatorio.eshop.usuario.controllers.imp.UsuarioControllerImpTest
+create_when_id_is_null  Time elapsed: 0.033 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: Expected java.lang.IllegalArgumentException to be thrown, but nothing was thrown.
+	at com.informatorio.eshop.usuario.controllers.imp.UsuarioControllerImpTest.create_when_id_is_null(UsuarioControllerImpTest.java:41)
+
+create_when_all_is_good  Time elapsed: 0.006 s  <<< ERROR!
+java.lang.IllegalArgumentException: El usuario no puede ser nulo.
+	at com.informatorio.eshop.usuario.controllers.imp.UsuarioControllerImpTest.create_when_all_is_good(UsuarioControllerImpTest.java:33)
+

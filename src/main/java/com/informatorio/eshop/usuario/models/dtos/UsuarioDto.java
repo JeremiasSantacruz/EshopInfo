@@ -1,10 +1,12 @@
-package com.informatorio.eshop.models.dtos;
+package com.informatorio.eshop.usuario.models.dtos;
 
 import java.time.LocalDate;
 
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
-@Data
+@Setter
+@Getter
 public class UsuarioDto {
 
    private Long id;
@@ -13,7 +15,7 @@ public class UsuarioDto {
 
    private String apellido;
 
-   private String dirección;
+   private String direccion;
 
    private LocalDate fechaDeAlta;
 
