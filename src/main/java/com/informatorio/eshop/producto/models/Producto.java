@@ -10,7 +10,6 @@ import javax.validation.constraints.NotNull;
 
 @Entity
 @Data
-
 public class Producto {
 
     @Id
@@ -26,18 +25,16 @@ public class Producto {
     @NotEmpty
     private String descripcion;
 
-    @NotNull
-    @NotEmpty
+    @Column(nullable = false)
     private Double precioUnitario;
 
     @NotNull
     @NotEmpty
-    @UniqueElements
+    @Column(unique = true)
     private String codigoInventario;
 
-    @NotNull
-    @NotEmpty
-    private String categoria;
+    @Column(nullable = false)
+    private Categorias categoria;
 
 
 

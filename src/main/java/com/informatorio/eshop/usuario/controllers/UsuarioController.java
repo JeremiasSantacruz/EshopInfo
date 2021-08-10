@@ -30,5 +30,5 @@ public interface UsuarioController {
    UsuarioDto update(@PathVariable Long id, @RequestBody UsuarioDto usuarioDto);
 
    @DeleteMapping("/{id}")
-   void delete(Long id);
+   void delete(@PathVariable Long id);
 }

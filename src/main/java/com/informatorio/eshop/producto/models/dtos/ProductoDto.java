@@ -5,6 +5,8 @@ import lombok.Setter;
 
 import java.time.LocalDate;
 
+import com.informatorio.eshop.producto.models.Categorias;
+
 @Setter
 @Getter
 public class ProductoDto {
@@ -18,5 +20,5 @@ public class ProductoDto {
 
     private String codigoInventario;
 
-    private String categoria;
+    private Categorias categoria;
 }

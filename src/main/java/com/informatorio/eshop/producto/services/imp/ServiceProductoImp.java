@@ -31,8 +31,7 @@ public class ServiceProductoImp implements  ServiceProducto {
     @Override
     public ProductoDto create(ProductoDto productoDto){
         Producto producto = productoMapper.toEntity(productoDto);
-        productoDao.save(producto);
-        return productoDto;
+        return productoMapper.toDto(productoDao.save(producto));
     }
 
     @Override
@@ -47,20 +46,17 @@ public class ServiceProductoImp implements  ServiceProducto {
     @Override
     public List<ProductoDto> getAll(){
         List<Producto> productoList = productoDao.findAll();
-        if(!productoList.isEmpty()){
-
+        if(productoList.isEmpty()){
             throw new ProductoNotFoundException();
         }else{
             return productoMapper.toDtoList(productoList);
-
         }
-
     }
 
     @Override
     public ProductoDto update(Long id,ProductoDto productoDto){
         Optional<Producto> producto = productoDao.findById(id);
-        if(!producto.isPresent()){
+        if(producto.isPresent()){
             producto.get().setCategoria(productoDto.getCategoria());
             producto.get().setNombre(productoDto.getNombre());
             producto.get().setDescripcion(productoDto.getDescripcion());

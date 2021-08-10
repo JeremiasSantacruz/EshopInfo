@@ -29,8 +29,7 @@ public class ServiceUsuario implements ServicesUsuarios {
    @Override
    public UsuarioDto create(UsuarioDto usuarioDto) {
       Usuario usuario = usuarioMapper.toEntity(usuarioDto);
-      usuarioDao.save(usuario);
-      return usuarioDto;
+      return usuarioMapper.toDto(usuarioDao.save(usuario));
    }
 
    @Override
