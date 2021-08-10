@@ -18,11 +18,11 @@ almacenar las entidades:
   - Agregar Productos - Id para el commit CART-0006
   - Eliminar Productos - - Id para el commit CART-0007
 
-###Buscar Productos:
+### Buscar Productos:
 - Todos los productos que tengan un nombre que comience con un string dado - Id para el commit CART-0004
 - Todos los productos de una categoría dada - Id para el commit CART-0005
 
-###Observaciones:
+### Observaciones:
 Recuerden enfocarse en pequeños fragmentos para poder testear mejor.
 Donde se menciona “Id para el commit CART-0003”, se refiere a que al subir el código a github, el mensaje de commit debe tener ese mensaje por delante, ejemplo:
 git commit -m “CART-0003 - Agregado Servicio para creación de Producto”
