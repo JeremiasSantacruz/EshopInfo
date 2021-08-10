@@ -30,8 +30,7 @@ public class UsuarioControllerImp implements UsuarioController {
       if (usuarioDto == null) {
          throw new IllegalArgumentException(MSG_NULL_ID );
       }
-      servicesUsuarios.create(usuarioDto);
-      return new ResponseEntity<UsuarioDto>(usuarioDto,HttpStatus.CREATED);
+      return new ResponseEntity<UsuarioDto>(servicesUsuarios.create(usuarioDto),HttpStatus.CREATED);
    }
 
    @Override

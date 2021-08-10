@@ -1,4 +1,4 @@
-package com.informatorio.eshop.usuario.controllers;
+package com.informatorio.eshop.producto.controllers.imp;
 
 import java.util.List;
 
@@ -12,23 +12,24 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.informatorio.eshop.usuario.models.dtos.UsuarioDto;
+import com.informatorio.eshop.producto.models.dtos.ProductoDto;
 
-@RequestMapping("/usuario")
-public interface UsuarioController {
+@RequestMapping("/producto")
+public interface ProductoController {
 
    @PutMapping("/")
-   ResponseEntity<UsuarioDto> create(@RequestBody @Validated UsuarioDto usuarioDto);
+   ResponseEntity<ProductoDto> create(@RequestBody @Validated ProductoDto productoDto);
 
    @GetMapping("/{id}")
-   UsuarioDto read(@PathVariable Long id);
+   ProductoDto read(@PathVariable Long id);
 
    @GetMapping("/")
-   List<UsuarioDto> getAll();
+   List<ProductoDto> getAll();
 
    @PatchMapping("/{id}")
-   UsuarioDto update(@PathVariable Long id, @RequestBody UsuarioDto usuarioDto);
+   ProductoDto update(@PathVariable Long id, @RequestBody ProductoDto productoDto);
 
    @DeleteMapping("/{id}")
    void delete(@PathVariable Long id);
+
 }
